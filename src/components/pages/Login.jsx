@@ -5,6 +5,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 import { api, backendapi } from "../../api";
+import loginpage1 from "../../images/loginpage1.png";
+import loginpage2 from "../../images/loginpage2.png";
+import loginpage3 from "../../images/loginpage3.png";
+import loginpage4 from "../../images/loginpage4.png";
+import loginpage from "../../images/loginPage.png";
 
 function Login() {
   const navigate = useNavigate();
@@ -45,22 +50,22 @@ function Login() {
         <div className='loginLeft'>
           <div className='frontImgWrapper'>
             <img
-              src={`${api}/images/loginpage1.png`}
+              src={loginpage1}
               className={show1 === 1 ? "frontImg show" : "frontImg hide"}
               alt=''
             />
             <img
-              src={`${api}/images/loginpage2.png`}
+              src={loginpage2}
               className={show1 === 2 ? "frontImg show" : "frontImg hide"}
               alt=''
             />
             <img
-              src={`${api}/images/loginpage3.png`}
+              src={loginpage3}
               className={show1 === 3 ? "frontImg show" : "frontImg hide"}
               alt=''
             />
             <img
-              src={`${api}/images/loginpage4.png`}
+              src={loginpage4}
               className={show1 === 4 ? "frontImg show" : "frontImg hide"}
               alt=''
             />
@@ -144,7 +149,7 @@ const LoginContainer = styled.div`
     position: relative;
     width: 100%;
     height: 600px;
-    background-image: url(${api}/images/loginpage.png);
+    background-image: url(${loginpage});
     min-width: 460px;
     background-repeat: no-repeat;
     background-position: right 2px;

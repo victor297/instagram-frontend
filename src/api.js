@@ -1,2 +1,2 @@
 export const api = "http://localhost:3001";
-export const backendapi = "http://localhost:8000/api";
+export const backendapi = "https://instagram-osw0.onrender.com/api";

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { NotificationManager } from "react-notifications";
 import { api, backendapi } from "../api";
+import defaultavatar from "../images/defaultavatar.png";
 
 function EditProfile(props) {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ function EditProfile(props) {
         <div className='editProfileLeft'>
           <label className='fileupload' htmlFor='file'>
             <img
-              src={picture ? picture : `${api}/image/defaultavatar.png`}
+              src={picture ? picture : `${defaultavatar}`}
               alt=''
               className='editProfileLeftImg'
             />

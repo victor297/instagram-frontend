@@ -9,6 +9,7 @@ import EditProfile from "../EditProfile";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import Intercept from "../../Tools/refrech";
 import { api, backendapi } from "../../api";
+import defaultpost from "../../images/defaultpost.jpg";
 
 function Profile(props) {
   const username = useParams().username;
@@ -58,13 +59,9 @@ function Profile(props) {
   };
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(
-        `${backendapi}/user/u/` + username
-      );
+      const res = await axios.get(`${backendapi}/user/u/` + username);
       setCurrentUser(res.data.user);
-      const pst = await axios.get(
-        `${backendapi}/article/u/` + username
-      );
+      const pst = await axios.get(`${backendapi}/article/u/` + username);
       setPosts(
         pst.data.sort((p1, p2) => {
           return new Date(p2.createdAt) - new Date(p1.createdAt);
@@ -144,7 +141,7 @@ function Profile(props) {
             <div key={p._id} className='profilePostWrapper'>
               <div className='profilePost'>
                 <img
-                  src={p.imgurl ? p.imgurl : `${api}/images/defaultpost.jpg`}
+                  src={p.imgurl ? p.imgurl : `${defaultpost}`}
                   alt=''
                   className='profilePostImg'
                 />
